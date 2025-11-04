@@ -6,8 +6,9 @@ X_UNSPECIFIC_INBETWEEN_HAPPENINGS = '/'
 #X_USER_TWEETS_JSON_JS_FILE = 'tweets.json' # rename `.js` <=> `.json`
 X_USER_TWEETS_JSON_JS_FILE = 'tweets_example.json' # rename `.js` <=> `.json`
 
-def td_entry(post_texts)
-    return "<td>#{ post_texts }</td>\n"
+def td_entry(post_texts, line_break = true )
+    new_line = "\n" if line_break
+    return "<td>#{ post_texts }</td>" + new_line
 end
 
 def tr_html(html_text)
@@ -48,7 +49,7 @@ def build_tweet_user_posts
         tweet_id = tweet.id
         tweet_created_at = tweet.created_at
         tweet_full_text = tweet.full_text
-        post_html  = td_entry("<a href=\"#{user_resource_location}\">#{tweet_id}</a>").chomp(X_UNSPECIFIC_INBETWEEN_HAPPENINGS)
+        post_html  = td_entry("<a href=\"#{user_resource_location}\">#{tweet_id}</a>")
         post_html += td_entry(tweet_full_text) + td_entry(tweet_created_at)
         user_posts.add_post(post_html)
     end

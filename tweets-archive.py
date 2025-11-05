@@ -19,12 +19,7 @@ def table_html(inner_text):
     return "<table>%(inner_text)</table>"
 
 class Tweet():
-#    def tweet(self):
-#        self["obj"] = self
-#        self['id'] = self['tweet']['id']
-#        self["full_text"] = self['tweet']["full_text"]
-#        self["created_at"] = self['tweet']["created_at"]
-#        return self
+    raise BaseException('this workable code --python version on hold; that ruby version functions')
 
 class UserPosts:
     def all():

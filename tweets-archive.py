@@ -19,12 +19,12 @@ def table_html(inner_text):
     return "<table>%(inner_text)</table>"
 
 class Tweet():
-    def tweet(self):
-        self["obj"] = self
-        self['id'] = self['tweet']['id']
-        self["full_text"] = self['tweet']["full_text"]
-        self["created_at"] = self['tweet']["created_at"]
-        return self
+#    def tweet(self):
+#        self["obj"] = self
+#        self['id'] = self['tweet']['id']
+#        self["full_text"] = self['tweet']["full_text"]
+#        self["created_at"] = self['tweet']["created_at"]
+#        return self
 
 class UserPosts:
     def all():
@@ -53,6 +53,3 @@ def build_tweet_user_posts():
         post_html = ' '.join([tr_html(td_entry(post_html)), td_entry(tweet_created_at)])
         the_user_post.add_post(post_html)
     return ''.join(the_user_post.all)
-
-all_user_status = build_tweet_user_posts()
-print(all_user_status)
